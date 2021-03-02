@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   byobu \
   gdb \
   htop \
+  language-pack-en \
   locales \
   locales-all \
   man-db \
@@ -20,7 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   rsyslog \
   zsh
 
-RUN mkdir /var/run/sshd && \
+RUN locale-gen && \
+    mkdir /var/run/sshd && \
     chmod 755 /usr/local/share/zsh && \
     chmod 755 /usr/local/share/zsh/site-functions
 

@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   byobu \
   gdb \
   htop \
+  locales \
+  locales-all \
   man-db \
   net-tools \
   openssh-server \

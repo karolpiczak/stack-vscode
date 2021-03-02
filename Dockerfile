@@ -6,6 +6,7 @@ WORKDIR /workspace/
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+  byobu \
   gdb \
   htop \
   man-db \
@@ -14,10 +15,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   openssl \
   python3 \
   rsync \
-  syslog-ng \
+  rsyslog \
   zsh
 
-RUN mkdir /var/run/sshd
+RUN mkdir /var/run/sshd && \
+    chmod 755 /usr/local/share/zsh && \
+    chmod 755 /usr/local/share/zsh/site-functions
 
 # RUN conda env create -f environment.yml 
 # RUN conda init bash

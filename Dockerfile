@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   gdb \
   htop \
   language-pack-en \
+  libncursesw6 \
   locales \
   locales-all \
   man-db \

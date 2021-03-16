@@ -21,12 +21,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   python3 \
   rsync \
   rsyslog \
+  wget \
+  unzip \
   zsh
 
 RUN locale-gen && \
-    mkdir /var/run/sshd && \
-    chmod 755 /usr/local/share/zsh && \
-    chmod 755 /usr/local/share/zsh/site-functions
+  mkdir /var/run/sshd && \
+  chmod 755 /usr/local/share/zsh && \
+  chmod 755 /usr/local/share/zsh/site-functions
 
-# RUN conda env create -f environment.yml 
-# RUN conda init bash
+RUN mkdir /usr/share/fonts/googlefonts && \
+  wget -O /usr/share/fonts/googlefonts/nunito.zip https://github.com/googlefonts/nunito/archive/main.zip && \
+  unzip -d /usr/share/fonts/googlefonts/ /usr/share/fonts/googlefonts/nunito.zip && \
+  chmod -R --reference=/usr/share/fonts/opentype /usr/share/fonts/googlefonts && \
+  fc-cache -fv
+  

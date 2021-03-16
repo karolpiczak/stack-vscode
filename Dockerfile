@@ -33,6 +33,6 @@ RUN locale-gen && \
 RUN mkdir /usr/share/fonts/googlefonts && \
   wget -O /usr/share/fonts/googlefonts/nunito.zip https://github.com/googlefonts/nunito/archive/main.zip && \
   unzip -d /usr/share/fonts/googlefonts/ /usr/share/fonts/googlefonts/nunito.zip && \
-  chmod -R --reference=/usr/share/fonts/opentype /usr/share/fonts/googlefonts && \
+  chmod -R --reference=/usr/share/fonts/truetype /usr/share/fonts/googlefonts && \
   fc-cache -fv
   

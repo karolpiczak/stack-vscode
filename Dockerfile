@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/pytorch:20.09-py3
+FROM nvcr.io/nvidia/pytorch:23.02-py3
 
 ADD . /workspace/
 WORKDIR /workspace/
